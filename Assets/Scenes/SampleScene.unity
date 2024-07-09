@@ -506,6 +506,7 @@ MonoBehaviour:
   enemyPrefab: {fileID: 992378883567164852, guid: c402f6a99d8207945b9a0ee7c067ba84,
     type: 3}
   initialEnemies: 1
+  enemiesPerInsanityStep: 2
 --- !u!114 &1616594505
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -646,6 +647,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1721109420 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1747150340968283617, guid: 1ce3eae1a719ba2408a919b2f9151623,
+    type: 3}
+  m_PrefabInstance: {fileID: 1747150339797469630}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2006649524
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -838,5 +845,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 1747150340212059239, guid: 1ce3eae1a719ba2408a919b2f9151623,
+        type: 3}
+      propertyPath: insanityBarFill
+      value: 
+      objectReference: {fileID: 1721109420}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1ce3eae1a719ba2408a919b2f9151623, type: 3}
