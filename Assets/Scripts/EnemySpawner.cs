@@ -6,6 +6,7 @@ public class EnemySpawner : MonoBehaviour
 {
     public GameObject enemyPrefab;
     public int initialEnemies = 1;
+    public int enemiesPerInsanityStep = 2;
     private List<GameObject> activeEnemies = new List<GameObject>();
     private InsanityManager insanityManager;
     private GameManager gameManager;
@@ -29,8 +30,11 @@ public class EnemySpawner : MonoBehaviour
             Debug.LogError("GameManager not found in the scene!");
         }
 
-        // Spawn initial enemy
-        SpawnEnemy();
+        // Spawn initial enemies
+        for (int i = 0; i < initialEnemies; i++)
+        {
+            SpawnEnemy();
+        }
     }
 
     void UpdateEnemyCount(float insanityLevel)
@@ -38,7 +42,10 @@ public class EnemySpawner : MonoBehaviour
         if (gameManager == null || gameManager.isGameOver) return;
 
         int insanityStep = Mathf.FloorToInt(insanityLevel / 10f);
-        int targetEnemyCount = Mathf.Min(Mathf.RoundToInt(Mathf.Pow(2, insanityStep)), 256);
+        int targetEnemyCount = initialEnemies + (insanityStep * enemiesPerInsanityStep);
+
+        // limitando la cantidad de enemigos
+        targetEnemyCount = Mathf.Min(targetEnemyCount, initialEnemies + (9 * enemiesPerInsanityStep));
 
         while (activeEnemies.Count < targetEnemyCount)
         {
