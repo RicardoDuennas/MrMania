@@ -14,21 +14,15 @@ public class Medicine : MonoBehaviour
         pillCollider.isTrigger = true;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-
-
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
             Destroy(this.gameObject);
             Pildoras.GetComponent<PildoraManager>().isPillInScene = false;
-            Debug.Log("entra");
+            Pildoras.GetComponent<PillCountdown>().StartCount(6);
+            //GetComponent<...>().StartBoost();
+
         }
     }
 

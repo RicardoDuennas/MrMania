@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class PildoraManager : MonoBehaviour
@@ -10,15 +11,16 @@ public class PildoraManager : MonoBehaviour
     public int minZ = 0;
     public int maxZ = 0;
     public int yPos = 0;
+    public int secondsToWait = 2;
     public bool isPillInScene;
-    private int pillActive = 0;
+    [SerializeField] private int pillActive = 0;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        
-        StartCoroutine(SpawnPill());
+        CoroutineCall();
+
     }
 
     // Update is called once per frame
@@ -27,49 +29,20 @@ public class PildoraManager : MonoBehaviour
         
     }
 
-    IEnumerator SpawnPill(){
-        Vector3 spawnLocation = new Vector3(Random.Range(minX, maxX), yPos, Random.Range(minZ, maxZ));
-        Instantiate(pillPrefabs[pillActive], spawnLocation, pillPrefabs[pillActive].transform.rotation);
-        isPillInScene = true;    
-        Debug.Log("1");        
-        while (isPillInScene){
-            yield return null;
+    public void CoroutineCall (){
+        StartCoroutine(SpawnPill());        
+    }
+    public IEnumerator SpawnPill(){
+        yield return new WaitForSeconds(2);
+
+        if (pillActive < pillPrefabs.Count()){
+            Vector3 spawnLocation = new Vector3(Random.Range(minX, maxX), yPos, Random.Range(minZ, maxZ));
+            Instantiate(pillPrefabs[pillActive], spawnLocation, pillPrefabs[pillActive].transform.rotation);
+            isPillInScene = true;  
+            pillActive += 1;
         }
-        pillActive += 1;
-        spawnLocation = new Vector3(Random.Range(minX, maxX), yPos, Random.Range(minZ, maxZ));
-        Instantiate(pillPrefabs[pillActive], spawnLocation, pillPrefabs[pillActive].transform.rotation);
-        isPillInScene = true;    
-        Debug.Log("2");        
-        while (isPillInScene){
-            yield return null;
-        }
-        pillActive += 1;
-        spawnLocation = new Vector3(Random.Range(minX, maxX), yPos, Random.Range(minZ, maxZ));
-        Instantiate(pillPrefabs[pillActive], spawnLocation, pillPrefabs[pillActive].transform.rotation);
-        isPillInScene = true;         
-        Debug.Log("3");        
-   
-        while (isPillInScene){
-            yield return null;
-        }
-        pillActive += 1;
-        spawnLocation = new Vector3(Random.Range(minX, maxX), yPos, Random.Range(minZ, maxZ));
-        Instantiate(pillPrefabs[pillActive], spawnLocation, pillPrefabs[pillActive].transform.rotation);
-        isPillInScene = true;  
-        Debug.Log("4");        
-  
-        while (isPillInScene){
-            yield return null;
-        }
-        pillActive += 1;
-        spawnLocation = new Vector3(Random.Range(minX, maxX), yPos, Random.Range(minZ, maxZ));
-        Instantiate(pillPrefabs[pillActive], spawnLocation, pillPrefabs[pillActive].transform.rotation);
-        isPillInScene = true;    
-        Debug.Log("5");        
+
+//        Debug.Log(!gameObject.GetComponent<PillCountdown>().timerIsRunning);
 
     }
-
-
-
-
 }
