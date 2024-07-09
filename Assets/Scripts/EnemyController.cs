@@ -1,31 +1,31 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.AI;
 
 public class EnemyController : MonoBehaviour
 {
+    public float moveSpeed = 3f;
+    private Transform player;
+    private Rigidbody enemyRb;
 
-    public Transform player;
-    public float velocidad;
-
-    public NavMeshAgent Ai;
-
-    // Start is called before the first frame update
     void Start()
     {
-        player = GameObject.Find("Player").transform;
-        Ai.speed = velocidad;
+        player = GameObject.FindGameObjectWithTag("Player").transform;
+        enemyRb = GetComponent<Rigidbody>();
     }
 
-    // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        Ai.SetDestination(player.position);
+        Vector3 direction = (player.position - transform.position).normalized;
+        enemyRb.MovePosition(enemyRb.position + direction * moveSpeed * Time.fixedDeltaTime);
     }
 
-    private void OnTriggerEnter(Collider other) {
-        if(other.CompareTag("Bullet"))
-        Destroy(gameObject);
+    void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            InsanityManager insanityManager = FindObjectOfType<InsanityManager>();
+            insanityManager.insanityLevel += 10f; // Incrementa la locura al tocar al jugador
+        }
     }
 }
