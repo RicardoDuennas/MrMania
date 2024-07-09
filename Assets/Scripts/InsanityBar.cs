@@ -6,7 +6,7 @@ using TMPro;
 
 public class InsanityBar : MonoBehaviour
 {
-    public Image insanityBarFill;
+    public GameObject insanityBarFill;
     public TextMeshProUGUI insanityPercent;
     private InsanityManager insanityManager;
 
@@ -23,7 +23,11 @@ public class InsanityBar : MonoBehaviour
     {
         if (insanityBarFill != null)
         {
-            insanityBarFill.fillAmount = insanityLevel / insanityManager.maxInsanity;
+            float scaleValue = insanityLevel / insanityManager.maxInsanity;
+            RectTransform rectTransform = insanityBarFill.GetComponent<RectTransform>();
+            Vector3 newScale = rectTransform.localScale;
+            newScale.x = scaleValue;
+            rectTransform.localScale = newScale;
         }
         
         if (insanityPercent != null)
