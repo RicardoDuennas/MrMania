@@ -21,6 +21,7 @@ public class Medicine : MonoBehaviour
             Destroy(this.gameObject);
             Pildoras.GetComponent<PildoraManager>().isPillInScene = false;
             Pildoras.GetComponent<PillCountdown>().StartCount(6);
+            Pildoras.GetComponent<PildoraManager>().pillsTaken += 1;
             //GetComponent<...>().StartBoost();
 
         }

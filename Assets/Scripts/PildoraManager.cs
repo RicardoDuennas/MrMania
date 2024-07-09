@@ -13,7 +13,8 @@ public class PildoraManager : MonoBehaviour
     public int yPos = 0;
     public int secondsToWait = 2;
     public bool isPillInScene;
-    [SerializeField] private int pillActive = 0;
+    public int pillActive = 0;
+    public int pillsTaken = 0;
 
 
     // Start is called before the first frame update
