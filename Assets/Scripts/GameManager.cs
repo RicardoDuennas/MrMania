@@ -4,15 +4,13 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public bool isGameOver = false;
 
-    // Update is called once per frame
-    void Update()
+    public void GameOver()
     {
-        
+        isGameOver = true;
+        Debug.Log("Game Over");
+        // Todo lo relacionado al game over
+        Time.timeScale = 0; // Detiene el juego
     }
 }
