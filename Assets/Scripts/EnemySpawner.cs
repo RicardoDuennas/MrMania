@@ -55,7 +55,7 @@ public class EnemySpawner : MonoBehaviour
         }
 
         Vector3 randomPos = Random.insideUnitSphere * 10f;
-        randomPos.y = 0.5f;
+        randomPos.y = 1.25f;
         GameObject newEnemy = Instantiate(enemyPrefab, randomPos, Quaternion.identity);
         activeEnemies.Add(newEnemy);
     }
