@@ -7,29 +7,48 @@ public class InsanityManager : MonoBehaviour
     public float insanityLevel = 0f;
     public float maxInsanity = 100f;
     public float insanityIncreaseRate = 1f;
-    public System.Action<float> OnInsanityChanged;
+    public event System.Action<float> OnInsanityChanged;
+
+    private GameManager gameManager;
+
+    void Start()
+    {
+        gameManager = FindObjectOfType<GameManager>();
+        if (gameManager == null)
+        {
+            Debug.LogError("GameManager not found in the scene!");
+        }
+    }
 
     void Update()
     {
-        float oldInsanity = insanityLevel;
-        insanityLevel += insanityIncreaseRate * Time.deltaTime;
-        insanityLevel = Mathf.Clamp(insanityLevel, 0f, maxInsanity);
-
-        if (insanityLevel != oldInsanity)
+        if (gameManager != null && !gameManager.isGameOver)
         {
-            OnInsanityChanged?.Invoke(insanityLevel);
-        }
+            float oldInsanity = insanityLevel;
+            insanityLevel += insanityIncreaseRate * Time.deltaTime;
+            insanityLevel = Mathf.Clamp(insanityLevel, 0f, maxInsanity);
 
-        if (insanityLevel >= maxInsanity)
-        {
-            FindObjectOfType<GameManager>().GameOver();
+            if (insanityLevel != oldInsanity)
+            {
+                OnInsanityChanged?.Invoke(insanityLevel);
+            }
+
+            if (insanityLevel >= maxInsanity)
+            {
+                gameManager.GameOver();
+            }
         }
     }
 
     public void ReduceInsanity(float amount)
     {
+        float oldInsanity = insanityLevel;
         insanityLevel -= amount;
         insanityLevel = Mathf.Max(insanityLevel, 0f);
-        OnInsanityChanged?.Invoke(insanityLevel);
+        
+        if (insanityLevel != oldInsanity)
+        {
+            OnInsanityChanged?.Invoke(insanityLevel);
+        }
     }
 }
