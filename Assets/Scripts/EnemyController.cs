@@ -1,9 +1,11 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyController : MonoBehaviour
 {
+    public static event Action<EnemyController> OnEnemyDestroyed;
     public float moveSpeed = 3f;
     private Transform player;
     private Rigidbody enemyRb;
@@ -16,8 +18,11 @@ public class EnemyController : MonoBehaviour
 
     void FixedUpdate()
     {
-        Vector3 direction = (player.position - transform.position).normalized;
-        enemyRb.MovePosition(enemyRb.position + direction * moveSpeed * Time.fixedDeltaTime);
+        if (player != null)
+        {
+            Vector3 direction = (player.position - transform.position).normalized;
+            enemyRb.velocity = direction * moveSpeed;
+        }
     }
 
     void OnCollisionEnter(Collision collision)
@@ -25,7 +30,28 @@ public class EnemyController : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             InsanityManager insanityManager = FindObjectOfType<InsanityManager>();
-            insanityManager.insanityLevel += 10f; // Incrementa la locura al tocar al jugador
+            if (insanityManager != null && !insanityManager.isImmune)
+            {
+                insanityManager.IncreaseInsanity(10f);
+            }
         }
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            PlayerPowerUp powerUp = other.gameObject.GetComponent<PlayerPowerUp>();
+            if (powerUp != null && powerUp.IsImmune)
+            {
+                DestroyEnemy();
+            }
+        }
+    }
+
+    public void DestroyEnemy()
+    {
+        OnEnemyDestroyed?.Invoke(this);
+        Destroy(gameObject);
     }
 }
