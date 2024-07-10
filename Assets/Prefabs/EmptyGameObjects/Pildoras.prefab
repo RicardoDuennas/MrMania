@@ -51,15 +51,16 @@ MonoBehaviour:
   - {fileID: 6536119004145814007, guid: d8aec64d2c90a80488e3e41dc16f51a1, type: 3}
   - {fileID: 6536119004145814007, guid: d8aec64d2c90a80488e3e41dc16f51a1, type: 3}
   - {fileID: 6536119004145814007, guid: d8aec64d2c90a80488e3e41dc16f51a1, type: 3}
+  - {fileID: 6536119004145814007, guid: d8aec64d2c90a80488e3e41dc16f51a1, type: 3}
+  - {fileID: 6536119004145814007, guid: d8aec64d2c90a80488e3e41dc16f51a1, type: 3}
   minX: -34
   maxX: 34
   minZ: -34
   maxZ: 34
   yPos: 1
-  secondsToWait: 2
   isPillInScene: 0
-  isCountRunning: 0
-  pildoras: {fileID: 0}
+  pillActive: 0
+  pillsTaken: 0
 --- !u!114 &3276684721926476189
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -72,6 +73,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70d6f5b9cb547fb42a339e346100e9a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Pildoras: {fileID: 5918938556551481020}
   timeRemaining: 6
   timerIsRunning: 0
-  Pildoras: {fileID: 5918938556551481020}
