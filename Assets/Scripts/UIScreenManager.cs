@@ -12,10 +12,24 @@ public class UIScreenManager : MonoBehaviour
     public GameObject winnerScreen;
     public GameObject gameOverScreen;
 
+    public bool isRestarting = false;
+
     private void Start()
-    {
+    {/*
+        if (isRestarting == true)
+        {
+            Debug.Log("No hago nada porque estoy reiniciando");
+        }
+        else if (isRestarting == false)
+        {
+            Debug.Log("Entre porque quitie");
+            Time.timeScale = 0f; // Pausa el juego
+            newGamePanel.SetActive(true);
+        }
+        */
         Time.timeScale = 0f; // Pausa el juego
         newGamePanel.SetActive(true);
+
     }
 
     public void OnNewGameButtonPressed() 
