@@ -112,6 +112,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 3
+  sounds: {fileID: 4385923411904029016, guid: d5e5b0da7c84c91489688218aadc1d3f, type: 3}
 --- !u!54 &-7699053992621704525
 Rigidbody:
   m_ObjectHideFlags: 0
