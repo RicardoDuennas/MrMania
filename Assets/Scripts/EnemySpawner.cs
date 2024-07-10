@@ -30,7 +30,8 @@ public class EnemySpawner : MonoBehaviour
             Debug.LogError("GameManager not found in the scene!");
         }
 
-        // Spawn initial enemies
+        EnemyController.OnEnemyDestroyed += HandleEnemyDestroyed;
+
         for (int i = 0; i < initialEnemies; i++)
         {
             SpawnEnemy();
@@ -44,7 +45,6 @@ public class EnemySpawner : MonoBehaviour
         int insanityStep = Mathf.FloorToInt(insanityLevel / 10f);
         int targetEnemyCount = initialEnemies + (insanityStep * enemiesPerInsanityStep);
 
-        // limitando la cantidad de enemigos
         targetEnemyCount = Mathf.Min(targetEnemyCount, initialEnemies + (9 * enemiesPerInsanityStep));
 
         while (activeEnemies.Count < targetEnemyCount)
@@ -67,11 +67,19 @@ public class EnemySpawner : MonoBehaviour
         activeEnemies.Add(newEnemy);
     }
 
+    void HandleEnemyDestroyed(EnemyController enemy)
+    {
+        activeEnemies.Remove(enemy.gameObject);
+        UpdateEnemyCount(insanityManager.insanityLevel);
+    }
+
     void OnDestroy()
     {
         if (insanityManager != null)
         {
             insanityManager.OnInsanityChanged -= UpdateEnemyCount;
         }
+
+        EnemyController.OnEnemyDestroyed -= HandleEnemyDestroyed;
     }
 }

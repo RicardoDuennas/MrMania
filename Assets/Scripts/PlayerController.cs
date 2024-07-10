@@ -5,15 +5,15 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public float moveSpeed = 5f;
-    private Rigidbody rb;
-
     public float waveForce = 10f;
     public float waveCooldown = 5f;
     private float lastWaveTime;
+    private Rigidbody rb;
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        rb.freezeRotation = true; // Evita que el Rigidbody gire
     }
 
     void Update()
@@ -22,6 +22,20 @@ public class PlayerController : MonoBehaviour
         {
             GenerateWave();
         }
+    }
+
+    void FixedUpdate()
+    {
+        // Obtiene la entrada del jugador
+        float moveHorizontal = Input.GetAxis("Horizontal");
+        float moveVertical = Input.GetAxis("Vertical");
+
+        // Calcula la dirección del movimiento
+        Vector3 movement = new Vector3(moveHorizontal, 0f, moveVertical).normalized;
+        Vector3 velocity = movement * moveSpeed;
+
+        // Aplica la velocidad al Rigidbody
+        rb.velocity = new Vector3(velocity.x, rb.velocity.y, velocity.z);
     }
 
     void GenerateWave()
@@ -40,14 +54,5 @@ public class PlayerController : MonoBehaviour
                 }
             }
         }
-    }
-
-    void FixedUpdate()
-    {
-        float moveHorizontal = Input.GetAxis("Horizontal");
-        float moveVertical = Input.GetAxis("Vertical");
-
-        Vector3 movement = new Vector3(moveHorizontal, 0f, moveVertical);
-        rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
     }
 }
