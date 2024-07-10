@@ -349,7 +349,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1201879141166484973}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 462235440}
+        m_TargetAssemblyTypeName: PauseMenuManager, Assembly-CSharp
+        m_MethodName: OnPauseButtonClicked
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &602959954413902739
 GameObject:
   m_ObjectHideFlags: 0
@@ -1089,6 +1101,7 @@ GameObject:
   - component: {fileID: 1747150340212059237}
   - component: {fileID: 1747150340212059236}
   - component: {fileID: 1747150340212059239}
+  - component: {fileID: 462235440}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1204,6 +1217,20 @@ MonoBehaviour:
   pillBarFill: {fileID: 780427269114289403}
   insanityPercent: {fileID: 1747150339534520154}
   pillTaken: {fileID: 8303578950400594931}
+--- !u!114 &462235440
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1747150340212059238}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3a1f1273f633a74c9619b17a6d1bf25, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pauseMenuUI: {fileID: 1178480736033252231}
+  pauseButton: {fileID: 8276429389321792411}
 --- !u!1 &1747150340411611909
 GameObject:
   m_ObjectHideFlags: 0
@@ -3010,7 +3037,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 136, y: 423.8}
+  m_AnchoredPosition: {x: 136, y: 17.309937}
   m_SizeDelta: {x: 80.478, y: 73.762}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3731768277508885576
@@ -3094,7 +3121,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 6295837281468544813}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 462235440}
+        m_TargetAssemblyTypeName: PauseMenuManager, Assembly-CSharp
+        m_MethodName: Quit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &7460848821303862183
 GameObject:
   m_ObjectHideFlags: 0
@@ -3381,7 +3420,7 @@ GameObject:
   - component: {fileID: 1963295566266167401}
   - component: {fileID: 8027828316284771125}
   m_Layer: 5
-  m_Name: PlayButton
+  m_Name: ContinueButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3404,7 +3443,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -146.85597, y: 423.796}
+  m_AnchoredPosition: {x: -146.85597, y: 17.305939}
   m_SizeDelta: {x: 109.051, y: 73.762}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2748661265366650532
@@ -3488,7 +3527,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1963295566266167401}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 462235440}
+        m_TargetAssemblyTypeName: PauseMenuManager, Assembly-CSharp
+        m_MethodName: Resume
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &8883364591895026084
 GameObject:
   m_ObjectHideFlags: 0
@@ -3582,7 +3633,7 @@ GameObject:
   - component: {fileID: 2005910273355123272}
   - component: {fileID: 8276429389321792411}
   m_Layer: 5
-  m_Name: PauseButton
+  m_Name: RestartButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3605,7 +3656,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1.0000101, y: 424.49002}
+  m_AnchoredPosition: {x: 1.0000101, y: 18}
   m_SizeDelta: {x: 113.847, y: 66.072}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &270206592518900502
@@ -3689,7 +3740,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2005910273355123272}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 462235440}
+        m_TargetAssemblyTypeName: PauseMenuManager, Assembly-CSharp
+        m_MethodName: Restart
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &9214159124211206999
 GameObject:
   m_ObjectHideFlags: 0
