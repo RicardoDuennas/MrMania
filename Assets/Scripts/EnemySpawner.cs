@@ -10,12 +10,16 @@ public class EnemySpawner : MonoBehaviour
     private List<GameObject> activeEnemies = new List<GameObject>();
     private InsanityManager insanityManager;
     private GameManager gameManager;
+    
+    // Variables para definir el rango de aparición
+    public float minSpawnDistance = 20f;
+    public float maxSpawnDistance = 30f;
 
     void Start()
     {
         insanityManager = FindObjectOfType<InsanityManager>();
         gameManager = FindObjectOfType<GameManager>();
-        
+
         if (insanityManager != null)
         {
             insanityManager.OnInsanityChanged += UpdateEnemyCount;
@@ -61,10 +65,21 @@ public class EnemySpawner : MonoBehaviour
             return;
         }
 
-        Vector3 randomPos = Random.insideUnitSphere * 20f;
-        randomPos.y = 1.25f;
+        Vector3 randomPos = GetRandomSpawnPosition();
         GameObject newEnemy = Instantiate(enemyPrefab, randomPos, Quaternion.identity);
         activeEnemies.Add(newEnemy);
+    }
+
+    Vector3 GetRandomSpawnPosition()
+    {
+        Vector3 playerPosition = GameObject.FindGameObjectWithTag("Player").transform.position;
+        Vector3 randomDirection = Random.insideUnitSphere;
+        randomDirection.y = 0; // Para mantener a los enemigos en el mismo nivel en el eje Y
+
+        float distance = Random.Range(minSpawnDistance, maxSpawnDistance);
+        Vector3 spawnPosition = playerPosition + randomDirection.normalized * distance;
+
+        return new Vector3(spawnPosition.x, 1.25f, spawnPosition.z);
     }
 
     void HandleEnemyDestroyed(EnemyController enemy)
