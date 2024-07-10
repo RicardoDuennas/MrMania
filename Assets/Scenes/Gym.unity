@@ -731,6 +731,8 @@ MonoBehaviour:
     type: 3}
   initialEnemies: 1
   enemiesPerInsanityStep: 2
+  minSpawnDistance: 10
+  maxSpawnDistance: 20
 --- !u!114 &1616594505
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -778,6 +780,8 @@ MonoBehaviour:
   isGameOver: 0
   isGameWon: 0
   enemiesKilled: 0
+  sounds: {fileID: 0}
+  winSound: {fileID: 0}
 --- !u!1 &1684315255
 GameObject:
   m_ObjectHideFlags: 0
