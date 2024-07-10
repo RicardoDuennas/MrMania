@@ -5,7 +5,6 @@ using UnityEngine.UI;
 public class PauseMenuManager : MonoBehaviour
 {
     public GameObject pauseMenuUI; // Referencia al Panel de pausa
-    //public GameObject canvas;
     public Button pauseButton; // Referencia al botón de pausa
     private bool isPaused = false;
 
@@ -40,15 +39,15 @@ public class PauseMenuManager : MonoBehaviour
 
     public void Restart()
     {
-        //gameObject.GetComponent<UIScreenManager>().isRestarting = true;
         Time.timeScale = 1f; // Reanuda el juego antes de reiniciar
+        GameState.isRestarting = true;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name); // Reinicia la escena actual
     }
 
     public void Quit()
     {
-        //gameObject.GetComponent<UIScreenManager>().isRestarting = false;
         Time.timeScale = 1f; // Reanuda el juego antes de reiniciar
+        GameState.isRestarting = false;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name); // Reinicia la escena actual
         Time.timeScale = 0f; // Pausa el juego
         gameObject.GetComponent<UIScreenManager>().newGamePanel.SetActive(true);

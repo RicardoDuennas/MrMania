@@ -15,21 +15,19 @@ public class UIScreenManager : MonoBehaviour
     public bool isRestarting = false;
 
     private void Start()
-    {/*
-        if (isRestarting == true)
+    {
+        if (GameState.isRestarting)
         {
             Debug.Log("No hago nada porque estoy reiniciando");
+            GameState.isRestarting = false; // Restablecer el estado
+            Time.timeScale = 1f; // Asegúrate de que el juego esté corriendo
         }
-        else if (isRestarting == false)
+        else
         {
             Debug.Log("Entre porque quitie");
             Time.timeScale = 0f; // Pausa el juego
             newGamePanel.SetActive(true);
         }
-        */
-        Time.timeScale = 0f; // Pausa el juego
-        newGamePanel.SetActive(true);
-
     }
 
     public void OnNewGameButtonPressed() 
@@ -60,6 +58,7 @@ public class UIScreenManager : MonoBehaviour
     {
         gameOverScreen.SetActive(false);
         Time.timeScale = 1f; // Reanuda el juego antes de reiniciar
+        GameState.isRestarting = true;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name); // Reinicia la escena actual
     }
 }
