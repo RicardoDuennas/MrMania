@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
     public GameObject canvas;
     public bool isGameOver = false;
     public bool isGameWon = false;
+    public int enemiesKilled = 0;
 
     public void GameOver()
     {

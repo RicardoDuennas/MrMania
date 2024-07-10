@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class UIScreenManager : MonoBehaviour
 {
@@ -11,6 +12,8 @@ public class UIScreenManager : MonoBehaviour
     public GameObject startScreen;
     public GameObject winnerScreen;
     public GameObject gameOverScreen;
+    public GameManager gameManager;
+    public TMP_Text enemiesKilled;
 
     private void Start()
     {
@@ -56,5 +59,9 @@ public class UIScreenManager : MonoBehaviour
         Time.timeScale = 1f; // Reanuda el juego antes de reiniciar
         GameState.isRestarting = true;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name); // Reinicia la escena actual
+    }
+    private void Update()
+    {
+        enemiesKilled.text = "Enemies Killed: " + gameManager.enemiesKilled.ToString();
     }
 }
