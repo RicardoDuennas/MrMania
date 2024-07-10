@@ -3,7 +3,7 @@ Prototipo de juego para la Jam 1 del Bootcamp Desarrollador Unity de Generation 
 
 # MrMania
 MrMania es una persona que sufre de alucinaciones y sus peores enemigos son imágenes malignas de él mismo que lo atacan y lo persiguen.
-Su poder es dependiente de sus píldoras, ya que con estas puede atacar a las alucinaciones por un breve periodo de tiempo haciéndolas desaparecer y empujándolas. Si deja de tomarlas padece episodios psicóticos que dificultan su vida.
+Su poder es dependiente de sus píldoras, ya que con estas puede atacar a las alucinaciones por un breve periodo de tiempo haciéndolas desaparecer y empujándolas. Si deja de tomarlas padece episodios psicóticos que dificultan su vida.<br>
 Juégalo ([aquí](https://coltaketa.itch.io/mr-mania)).
 
 
@@ -17,7 +17,7 @@ Juégalo ([aquí](https://coltaketa.itch.io/mr-mania)).
 
 
 ## Integrantes:
-Paola Torres<br>
-Miguel Cardona<br>
-Oscar Cardona<br>
-Ricardo Dueñas<br>
+Paola Torres ([patouiux](https://patouiux.itch.io/)) <br>
+Miguel Cardona ([ColTaketa](https://coltaketa.itch.io/)) <br>
+Oscar Cardona ([DevOsdres](https://devosdres.itch.io/)) <br>
+Ricardo Dueñas<br> ([ricdu](https://ricdu.itch.io/))
