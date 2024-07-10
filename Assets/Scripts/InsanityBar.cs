@@ -8,11 +8,13 @@ public class InsanityBar : MonoBehaviour
 {
     public GameObject insanityBarFill;
     public GameObject pillBarFill;
+    public GameObject powerUpUI;
     public TextMeshProUGUI insanityPercent;
     public TextMeshProUGUI pillTaken;
     private InsanityManager insanityManager;
     private PillCountdown pillCountDown;
     private PildoraManager pildoraManager;
+    private PlayerPowerUp playerPowerUp;
 
     void Start()
     {
@@ -24,6 +26,7 @@ public class InsanityBar : MonoBehaviour
 
         pillCountDown = FindObjectOfType<PillCountdown>();
         pildoraManager = FindObjectOfType<PildoraManager>();
+        playerPowerUp = FindObjectOfType<PlayerPowerUp>();
     }
 
     void UpdateInsanityBar(float insanityLevel)
@@ -54,6 +57,15 @@ public class InsanityBar : MonoBehaviour
             Vector3 newScale = rectTransform.localScale;
             newScale.y = scaleValue;
             rectTransform.localScale = newScale;
+        }
+
+        if (playerPowerUp.isImmune)
+        {
+            powerUpUI.SetActive(true);
+        }
+        else 
+        {
+            powerUpUI.SetActive(false);
         }
     }
 

@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class PlayerPowerUp : MonoBehaviour
 {
-    private bool isImmune = false;
+    public bool isImmune = false;
     private InsanityManager insanityManager;
 
     public bool IsImmune => isImmune;
