@@ -5,7 +5,7 @@ using System.Collections;
 [RequireComponent(typeof(AudioSource))]
 public class SoundPlayer : MonoBehaviour
 {
-    [SerializeField] private AudioClip[] painSounds;
+    public AudioClip[] painSounds;
     AudioSource audioSource;
 
     void Start()
