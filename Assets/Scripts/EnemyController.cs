@@ -53,6 +53,8 @@ public class EnemyController : MonoBehaviour
             if (powerUp != null && powerUp.IsImmune)
             {
                 DestroyEnemy();
+                int i = Random.Range(0, sounds.GetComponent<SoundPlayer>().killSounds.Length);
+                audioSource.PlayOneShot(sounds.GetComponent<SoundPlayer>().killSounds[i], 0.7f);
             }
         }
     }

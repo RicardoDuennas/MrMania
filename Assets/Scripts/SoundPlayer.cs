@@ -6,6 +6,7 @@ using System.Collections;
 public class SoundPlayer : MonoBehaviour
 {
     public AudioClip[] painSounds;
+    public AudioClip[]killSounds;
     AudioSource audioSource;
 
     void Start()
