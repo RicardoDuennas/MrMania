@@ -9,6 +9,7 @@ public class EnemyController : MonoBehaviour
 {
     public static event Action<EnemyController> OnEnemyDestroyed;
     public float moveSpeed = 3f;
+    private GameManager gameManager;
     private Transform player;
     private Rigidbody enemyRb;
     public GameObject sounds;
@@ -19,6 +20,7 @@ public class EnemyController : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player").transform;
         enemyRb = GetComponent<Rigidbody>();
         sounds = GameObject.Find("Sounds");
+        gameManager = FindObjectOfType<GameManager>();
         audioSource = sounds.GetComponent<AudioSource>(); 
     }
 
@@ -53,8 +55,10 @@ public class EnemyController : MonoBehaviour
             if (powerUp != null && powerUp.IsImmune)
             {
                 DestroyEnemy();
+                gameManager.enemiesKilled += 1;
                 int i = Random.Range(0, sounds.GetComponent<SoundPlayer>().killSounds.Length);
                 audioSource.PlayOneShot(sounds.GetComponent<SoundPlayer>().killSounds[i], 0.7f);
+
             }
         }
     }

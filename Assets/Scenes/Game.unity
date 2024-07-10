@@ -559,6 +559,23 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5918938556551481023, guid: ce2e524ff9d18ab4ab93f4027ce944f8,
+        type: 3}
+      propertyPath: pillPrefabs.Array.size
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5918938556551481023, guid: ce2e524ff9d18ab4ab93f4027ce944f8,
+        type: 3}
+      propertyPath: pillPrefabs.Array.data[5]
+      value: 
+      objectReference: {fileID: 6536119004145814007, guid: d8aec64d2c90a80488e3e41dc16f51a1,
+        type: 3}
+    - target: {fileID: 5918938556551481023, guid: ce2e524ff9d18ab4ab93f4027ce944f8,
+        type: 3}
+      propertyPath: pillPrefabs.Array.data[6]
+      value: 
+      objectReference: {fileID: 6536119004145814007, guid: d8aec64d2c90a80488e3e41dc16f51a1,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ce2e524ff9d18ab4ab93f4027ce944f8, type: 3}
 --- !u!1 &832575517
@@ -759,6 +776,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canvas: {fileID: 2097333547}
   isGameOver: 0
+  isGameWon: 0
+  enemiesKilled: 0
 --- !u!1 &1684315255
 GameObject:
   m_ObjectHideFlags: 0
@@ -1054,5 +1073,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 1747150340212059239, guid: 1ce3eae1a719ba2408a919b2f9151623,
+        type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 1616594507}
+    - target: {fileID: 7739948505127038721, guid: 1ce3eae1a719ba2408a919b2f9151623,
+        type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 1616594507}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1ce3eae1a719ba2408a919b2f9151623, type: 3}

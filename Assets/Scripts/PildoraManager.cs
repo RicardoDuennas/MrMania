@@ -14,12 +14,21 @@ public class PildoraManager : MonoBehaviour
     public bool isPillInScene;
     public int pillActive = 0;
     public int pillsTaken = 0;
+    private GameManager gameManager;
+
 
 
     // Start is called before the first frame update
     void Start()
     {
+        gameManager = FindObjectOfType<GameManager>();
+        if (gameManager == null)
+        {
+            Debug.LogError("GameManager not found in the scene!");
+        }
+
         CoroutineCall();
+
 
     }
 
@@ -41,8 +50,5 @@ public class PildoraManager : MonoBehaviour
             isPillInScene = true;  
             pillActive += 1;
         }
-
-//        Debug.Log(!gameObject.GetComponent<PillCountdown>().timerIsRunning);
-
     }
 }
