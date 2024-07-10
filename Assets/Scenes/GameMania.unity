@@ -962,7 +962,7 @@ PrefabInstance:
     - target: {fileID: 7372920828320526593, guid: f8699120fe2fb3649b69cc5b30a85876,
         type: 3}
       propertyPath: enemiesPerInsanityStep
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7372920828320526594, guid: f8699120fe2fb3649b69cc5b30a85876,
         type: 3}
