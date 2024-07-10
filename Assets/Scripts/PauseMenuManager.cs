@@ -50,7 +50,7 @@ public class PauseMenuManager : MonoBehaviour
         Time.timeScale = 1f; // Reanuda el juego antes de reiniciar
         SceneManager.LoadScene(SceneManager.GetActiveScene().name); // Reinicia la escena actual
         Time.timeScale = 0f; // Pausa el juego
-        gameObject.GetComponent<UIScreenManager>().NewGamePanel.SetActive(true);
+        gameObject.GetComponent<UIScreenManager>().newGamePanel.SetActive(true);
     }
 
     public void OnPauseButtonClicked()

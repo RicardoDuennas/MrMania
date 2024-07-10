@@ -952,7 +952,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 9203286931219985205}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7739948505127038721}
+        m_TargetAssemblyTypeName: UIScreenManager, Assembly-CSharp
+        m_MethodName: OnRestartButtonPressed
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1747150339534520156
 GameObject:
   m_ObjectHideFlags: 0
@@ -1244,12 +1256,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86f9efe687f82d94abab88854b4819e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NewGamePanel: {fileID: 312859705538834401}
-  LoreScreen: {fileID: 8883364591895026084}
-  TutorialScreen: {fileID: 602959954413902739}
-  StartScreen: {fileID: 2933345151315895940}
-  WinnerScreen: {fileID: 2467356319765232957}
-  GameOverScreen: {fileID: 3371944819520657574}
+  newGamePanel: {fileID: 312859705538834401}
+  loreScreen: {fileID: 8883364591895026084}
+  tutorialScreen: {fileID: 602959954413902739}
+  startScreen: {fileID: 2933345151315895940}
+  winnerScreen: {fileID: 2467356319765232957}
+  gameOverScreen: {fileID: 3371944819520657574}
 --- !u!1 &1747150340411611909
 GameObject:
   m_ObjectHideFlags: 0
