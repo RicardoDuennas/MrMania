@@ -39,10 +39,6 @@ public class Medicine : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            if (pildoras.GetComponent<PildoraManager>().pillActive == pildoras.GetComponent<PildoraManager>().pillPrefabs.Length){
-                gameManager.GameWin();
-            }
-
             Destroy(this.gameObject);
             pildoras.GetComponent<PildoraManager>().isPillInScene = false;
             pildoras.GetComponent<PillCountdown>().StartCount(6);

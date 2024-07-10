@@ -17,15 +17,6 @@ public class GameManager : MonoBehaviour
         // Todo lo relacionado al game over
         Time.timeScale = 0; // Detiene el juego
     }    
-    public void GameWin()
-    {
-        //isGameOver = true;
-        Debug.Log("Game Win");
-        canvas.GetComponent<UIScreenManager>().winnerScreen.SetActive(true);
-        // Todo lo relacionado al game over
-        Time.timeScale = 0; // Detiene el juego
-    }
-
     public void GameWon()
     {
         isGameWon = true;
