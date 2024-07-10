@@ -64,8 +64,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 992378883567164852, guid: c402f6a99d8207945b9a0ee7c067ba84,
     type: 3}
-  initialEnemies: 1
-  enemiesPerInsanityStep: 2
+  initialEnemies: 2
+  enemiesPerInsanityStep: 3
 --- !u!114 &7372920828320526594
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -82,3 +82,5 @@ MonoBehaviour:
   isGameOver: 0
   isGameWon: 0
   enemiesKilled: 0
+  sounds: {fileID: 4385923411904029016, guid: d5e5b0da7c84c91489688218aadc1d3f, type: 3}
+  winSound: {fileID: 8300000, guid: b9a7b81be3d91914da6c58d0a9cce151, type: 3}
