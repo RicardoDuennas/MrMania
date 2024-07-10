@@ -1,5 +1,7 @@
-Prototipo de juego para la Jam 1 del Bootcamp Desarrollador Unity de Generation Colombia.
+
 ![HydeAndSeekStudio](https://github.com/RicardoDuennas/MrMania/assets/11465785/a6b03636-32fe-47d9-8e76-f5e3832105f0)
+
+Prototipo de juego para la Jam 1 del Bootcamp Desarrollador Unity de Generation Colombia.
 
 # MrMania
 MrMania es una persona que sufre de alucinaciones y sus peores enemigos son imágenes malignas de él mismo que lo atacan y lo persiguen.
