@@ -2,6 +2,8 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
+
 
 public class EnemyController : MonoBehaviour
 {
@@ -9,11 +11,15 @@ public class EnemyController : MonoBehaviour
     public float moveSpeed = 3f;
     private Transform player;
     private Rigidbody enemyRb;
+    public GameObject sounds;
+    AudioSource audioSource;
 
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
         enemyRb = GetComponent<Rigidbody>();
+        sounds = GameObject.Find("Sounds");
+        audioSource = sounds.GetComponent<AudioSource>(); 
     }
 
     void FixedUpdate()
@@ -33,6 +39,8 @@ public class EnemyController : MonoBehaviour
             if (insanityManager != null && !insanityManager.isImmune)
             {
                 insanityManager.IncreaseInsanity(10f);
+                int i = Random.Range(0, sounds.GetComponent<SoundPlayer>().painSounds.Length);
+                audioSource.PlayOneShot(sounds.GetComponent<SoundPlayer>().painSounds[i], 0.7f);
             }
         }
     }
