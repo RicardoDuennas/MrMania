@@ -11,8 +11,8 @@ public class InsanityBar : MonoBehaviour
     public GameObject powerUpUI;
     public TextMeshProUGUI insanityPercent;
     public TextMeshProUGUI pillTaken;
+    public GameManager gameManager;
     private InsanityManager insanityManager;
-    private PillCountdown pillCountDown;
     private PildoraManager pildoraManager;
     private PlayerPowerUp playerPowerUp;
 
@@ -24,7 +24,6 @@ public class InsanityBar : MonoBehaviour
             insanityManager.OnInsanityChanged += UpdateInsanityBar;
         }
 
-        pillCountDown = FindObjectOfType<PillCountdown>();
         pildoraManager = FindObjectOfType<PildoraManager>();
         playerPowerUp = FindObjectOfType<PlayerPowerUp>();
     }
@@ -66,6 +65,11 @@ public class InsanityBar : MonoBehaviour
         else 
         {
             powerUpUI.SetActive(false);
+        }
+
+        if (pildoraManager.pillsTaken == 7) 
+        {
+            gameManager.GameWon();
         }
     }
 

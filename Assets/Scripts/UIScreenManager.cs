@@ -16,13 +16,11 @@ public class UIScreenManager : MonoBehaviour
     {
         if (GameState.isRestarting)
         {
-            Debug.Log("No hago nada porque estoy reiniciando");
             GameState.isRestarting = false; // Restablecer el estado
             Time.timeScale = 1f; // Asegúrate de que el juego esté corriendo
         }
         else
         {
-            Debug.Log("Entre porque quitie");
             Time.timeScale = 0f; // Pausa el juego
             newGamePanel.SetActive(true);
         }

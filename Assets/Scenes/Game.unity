@@ -776,6 +776,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canvas: {fileID: 2097333547}
   isGameOver: 0
+  isGameWon: 0
 --- !u!1 &1684315255
 GameObject:
   m_ObjectHideFlags: 0
@@ -1071,5 +1072,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 1747150340212059239, guid: 1ce3eae1a719ba2408a919b2f9151623,
+        type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 1616594507}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1ce3eae1a719ba2408a919b2f9151623, type: 3}
