@@ -12,8 +12,8 @@ public class EnemySpawner : MonoBehaviour
     private GameManager gameManager;
     
     // Variables para definir el rango de aparición
-    public float minSpawnDistance = 20f;
-    public float maxSpawnDistance = 30f;
+    public float minSpawnDistance = 10f;
+    public float maxSpawnDistance = 20f;
 
     void Start()
     {
