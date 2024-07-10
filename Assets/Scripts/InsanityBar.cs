@@ -16,6 +16,8 @@ public class InsanityBar : MonoBehaviour
     private PildoraManager pildoraManager;
     private PlayerPowerUp playerPowerUp;
 
+    private bool gameWon = false; // Bandera para controlar si el juego ha sido ganado
+
     void Start()
     {
         insanityManager = FindObjectOfType<InsanityManager>();
@@ -38,7 +40,7 @@ public class InsanityBar : MonoBehaviour
             newScale.x = scaleValue;
             rectTransform.localScale = newScale;
         }
-        
+
         if (insanityPercent != null)
         {
             insanityPercent.text = $"Locura: {Mathf.RoundToInt(insanityLevel)}%";
@@ -51,7 +53,7 @@ public class InsanityBar : MonoBehaviour
 
         if (pillBarFill != null)
         {
-            float scaleValue = (pildoraManager.pillsTaken / 10f)/0.7f;
+            float scaleValue = (pildoraManager.pillsTaken / 10f) / 0.7f;
             RectTransform rectTransform = pillBarFill.GetComponent<RectTransform>();
             Vector3 newScale = rectTransform.localScale;
             newScale.y = scaleValue;
@@ -62,13 +64,15 @@ public class InsanityBar : MonoBehaviour
         {
             powerUpUI.SetActive(true);
         }
-        else 
+        else
         {
             powerUpUI.SetActive(false);
         }
 
-        if (pildoraManager.pillsTaken == 7) 
+        if (!gameWon && pildoraManager.pillsTaken == 7)
         {
+            gameWon = true; // Marca el juego como ganado
+            Time.timeScale = 0f; // Pausa el juego
             gameManager.GameWon();
         }
     }
