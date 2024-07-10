@@ -9,10 +9,17 @@ public class PlayerPowerUp : MonoBehaviour
     private InsanityManager insanityManager;
 
     public bool IsImmune => isImmune;
+    public GameObject sounds;
+    AudioSource audioSource;
+    public AudioClip powerup;
+
 
     void Start()
     {
         insanityManager = FindObjectOfType<InsanityManager>();
+        sounds = GameObject.Find("Sounds");
+        audioSource = sounds.GetComponent<AudioSource>(); 
+
     }
 
     void OnTriggerEnter(Collider other)
@@ -38,6 +45,7 @@ public class PlayerPowerUp : MonoBehaviour
         if (insanityManager != null)
         {
             insanityManager.SetImmunity(true, duration); // Asegúrate de que el InsanityManager también sepa que el jugador está inmune.
+            audioSource.PlayOneShot(powerup, 0.7f);
         }
         yield return new WaitForSeconds(duration);
         isImmune = false;
