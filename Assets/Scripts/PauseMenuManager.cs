@@ -5,6 +5,7 @@ using UnityEngine.UI;
 public class PauseMenuManager : MonoBehaviour
 {
     public GameObject pauseMenuUI; // Referencia al Panel de pausa
+    //public GameObject canvas;
     public Button pauseButton; // Referencia al botón de pausa
 
     private bool isPaused = false;
@@ -46,12 +47,10 @@ public class PauseMenuManager : MonoBehaviour
 
     public void Quit()
     {
-        //Codigo de la web del programador, fuerza al editor de unity a finalizar el aplicativo
-        #if UNITY_EDITOR
-        UnityEditor.EditorApplication.isPlaying = false; // Para detener la reproducción en el Editor
-        #else
-        Application.Quit(); // Para salir del juego cuando está compilado
-        #endif
+        Time.timeScale = 1f; // Reanuda el juego antes de reiniciar
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name); // Reinicia la escena actual
+        Time.timeScale = 0f; // Pausa el juego
+        gameObject.GetComponent<UIScreenManager>().NewGamePanel.SetActive(true);
     }
 
     public void OnPauseButtonClicked()

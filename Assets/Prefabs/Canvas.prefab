@@ -1102,6 +1102,7 @@ GameObject:
   - component: {fileID: 1747150340212059236}
   - component: {fileID: 1747150340212059239}
   - component: {fileID: 462235440}
+  - component: {fileID: 7739948505127038721}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1231,6 +1232,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pauseMenuUI: {fileID: 1178480736033252231}
   pauseButton: {fileID: 8276429389321792411}
+--- !u!114 &7739948505127038721
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1747150340212059238}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86f9efe687f82d94abab88854b4819e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NewGamePanel: {fileID: 312859705538834401}
+  LoreScreen: {fileID: 8883364591895026084}
+  TutorialScreen: {fileID: 602959954413902739}
+  StartScreen: {fileID: 2933345151315895940}
+  WinnerScreen: {fileID: 2467356319765232957}
+  GameOverScreen: {fileID: 3371944819520657574}
 --- !u!1 &1747150340411611909
 GameObject:
   m_ObjectHideFlags: 0
@@ -1475,7 +1494,7 @@ GameObject:
   - component: {fileID: 6437585199058661652}
   - component: {fileID: 6558156736121305634}
   m_Layer: 5
-  m_Name: NextButton
+  m_Name: TutorialNextButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1582,7 +1601,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 6437585199058661652}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7739948505127038721}
+        m_TargetAssemblyTypeName: UIScreenManager, Assembly-CSharp
+        m_MethodName: OnTutorialNextButtonPressed
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2467356319765232957
 GameObject:
   m_ObjectHideFlags: 0
@@ -2209,7 +2240,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2826625364779071799}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7739948505127038721}
+        m_TargetAssemblyTypeName: UIScreenManager, Assembly-CSharp
+        m_MethodName: OnStartButtonPressed
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &4456509503793057253
 GameObject:
   m_ObjectHideFlags: 0
@@ -2482,7 +2525,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 5590765984712834566}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7739948505127038721}
+        m_TargetAssemblyTypeName: UIScreenManager, Assembly-CSharp
+        m_MethodName: OnNextButtonPressed
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &5876471106948933037
 GameObject:
   m_ObjectHideFlags: 0
@@ -3254,7 +3309,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2132102414470667280}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7739948505127038721}
+        m_TargetAssemblyTypeName: UIScreenManager, Assembly-CSharp
+        m_MethodName: OnNewGameButtonPressed
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &8157953444685700373
 GameObject:
   m_ObjectHideFlags: 0
