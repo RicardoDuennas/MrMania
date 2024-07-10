@@ -33,7 +33,7 @@ public class PildoraManager : MonoBehaviour
         StartCoroutine(SpawnPill());        
     }
     public IEnumerator SpawnPill(){
-        yield return new WaitForSeconds(Random.Range(2, 8));
+        yield return new WaitForSeconds(Random.Range(8, 14));
 
         if (pillActive < pillPrefabs.Count()){
             Vector3 spawnLocation = new Vector3(Random.Range(minX, maxX), yPos, Random.Range(minZ, maxZ));
