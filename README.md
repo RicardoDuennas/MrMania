@@ -6,6 +6,6 @@ Su poder es dependiente de sus píldoras, ya que con estas puede atacar a las al
 
 ## Integrantes:
 Paola Torres<br>
-Miguel Cardona
-Oscar Cardona
-Ricardo Dueñas
+Miguel Cardona<br>
+Oscar Cardona<br>
+Ricardo Dueñas<br>
