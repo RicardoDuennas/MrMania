@@ -11,7 +11,6 @@ public class PildoraManager : MonoBehaviour
     public int minZ = 0;
     public int maxZ = 0;
     public int yPos = 0;
-    public int secondsToWait = 2;
     public bool isPillInScene;
     public int pillActive = 0;
     public int pillsTaken = 0;
@@ -34,7 +33,7 @@ public class PildoraManager : MonoBehaviour
         StartCoroutine(SpawnPill());        
     }
     public IEnumerator SpawnPill(){
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(Random.Range(8, 14));
 
         if (pillActive < pillPrefabs.Count()){
             Vector3 spawnLocation = new Vector3(Random.Range(minX, maxX), yPos, Random.Range(minZ, maxZ));

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2032009408857968078}
   - component: {fileID: 2032009408857968079}
   - component: {fileID: 2032009408857968074}
-  - component: {fileID: 2032009408857968073}
+  - component: {fileID: 219048425}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -114,7 +114,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 4
   m_CollisionDetection: 0
 --- !u!114 &2032009408857968074
 MonoBehaviour:
@@ -128,8 +128,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffde89577061eea4d819630e2203a08c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
---- !u!114 &2032009408857968073
+  moveSpeed: 10
+  waveForce: 100
+  waveCooldown: 5
+--- !u!114 &219048425
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -138,8 +140,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 2032009408857968176}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f5979158cfe0e0a4d933fa929a21bda8, type: 3}
+  m_Script: {fileID: 11500000, guid: c7a75a9b24c76264bb4cc2afaab262a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waveForce: 10
-  cooldownTime: 5
+  sounds: {fileID: 4385923411904029016, guid: d5e5b0da7c84c91489688218aadc1d3f, type: 3}
+  powerup: {fileID: 8300000, guid: bd5828b4304d60342b510869cd7c5b19, type: 3}
