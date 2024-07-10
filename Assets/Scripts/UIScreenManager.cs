@@ -12,8 +12,6 @@ public class UIScreenManager : MonoBehaviour
     public GameObject winnerScreen;
     public GameObject gameOverScreen;
 
-    public bool isRestarting = false;
-
     private void Start()
     {
         if (GameState.isRestarting)
