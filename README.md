@@ -17,7 +17,7 @@ Juégalo ([aquí](https://coltaketa.itch.io/mr-mania)).
 
 
 ## Integrantes:
-Paola Torres ([patouiux](https://patouiux.itch.io/)) <br>
-Miguel Cardona ([ColTaketa](https://coltaketa.itch.io/)) <br>
-Oscar Cardona ([DevOsdres](https://devosdres.itch.io/)) <br>
-Ricardo Dueñas<br> ([ricdu](https://ricdu.itch.io/))
+Paola Torres ([patouiux](https://patouiux.itch.io/)) en itch.io<br>
+Miguel Cardona ([ColTaketa](https://coltaketa.itch.io/)) en itch.io <br>
+Oscar Cardona ([DevOsdres](https://devosdres.itch.io/)) en itch.io <br>
+Ricardo Dueñas ([ricdu](https://ricdu.itch.io/)) en itch.io
